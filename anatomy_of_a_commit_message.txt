@@ -1,1 +1,33 @@
+cat example_commit.txt 
+
+first-line:- short message like short brief description, up to 50 charecters.
+paragrakh:- the rest of the text is kept under 72 characters or it can be more too.
+
+cd scripts
+git log
+
+Git config command
+git config  - -global user.email “me@example.com
+git config  - -global user.name “My name”
+
+Git init command
+: ~/checks$ git init # in linux
+git init # in windows
+
+Git ls -la command # in linux
+: ~/checks$ ls -la
+The Git ls - la command checks that an identified directory exists.
+: ~/checks$ ls -l .git/
+The ls-l.git command checks inside the directory to see the different things that it contains. This is called the Git directory. The Git directory is a database for your Git project that stores the changes and the change history.
+
+Git add command # in linux
+:~/checks$ git add disk_usage.py
+
+Git status command # in linux
+:~/checks$ git status
+
+Git commit command # in linux
+:~/checks$ git commit
+
+
 
