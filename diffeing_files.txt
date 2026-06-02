@@ -1,0 +1,13 @@
+cat rearrange1.py 
+cat rearrange2.py 
+
+# displays the difference between files.
+diff rearrange1.py rearrange2.py 
+diff validations1.py validations2.py 
+# displays the changed lines.
+diff -u validations1.py validations2.py 
+
+wdiff
+meld
+KDiff3
+vimdiff
