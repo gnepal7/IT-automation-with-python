@@ -1,1 +1,19 @@
+git config --global user.email "me@example.com"
+git config --global user.name "My name"
 
+mkdir checks
+cd checks
+git init
+
+ls -l .git/
+# displays all files and folder inside specific folders.
+
+cp ../disk_usage.py .
+ls -l
+# displays the total count of files inside specific folder(s).
+
+git status
+git add disk_usage.py 
+git add .
+git add --all
+git commit -m "message"
