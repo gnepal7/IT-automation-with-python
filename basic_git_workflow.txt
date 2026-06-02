@@ -1,1 +1,31 @@
+git init
+
+git config -l # on linux
+git config -user.email # on windows
+git config -user.name
+
+#!/usr/bin/env python3
+def main():
+    pass
+main()
+
+chmod +x all_checks.py
+git status
+
+git add all_checks.py # add:- git tracker command
+git commit
+
+#!/usr/bin/env python3
+import os
+def check_reboot():
+    """Returns True if the computer has a pending reboot."""
+    return os.path.exists("/run/reboot-required")	
+
+def main():
+    pass
+main()
+
+git status
+git add all_checks.py 
+git commit -m 'Add a check_reboot function'
 
