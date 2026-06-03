@@ -1,0 +1,10 @@
+git branch : lists all branches in the repository
+git branch <name> : creates a new branch
+git branch -d <name> : deletes a branch safely (if merged)
+git branch -D <name> : force deletes a branch
+git checkout <branch> : switches to another branch
+git checkout -b <new-branch> : creates and switches to a new branch
+git merge <branch> : merges a branch into the current branch
+git merge --abort : stops a merge and restores previous state
+git log --graph : shows commit history as a visual branch graph
+git log --oneline : shows commit history in a short single-line format

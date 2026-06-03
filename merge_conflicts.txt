@@ -1,0 +1,18 @@
+git commit -a -m 'Add comment to main()'
+
+git checkout even-better-feature 
+
+git commit -a -m 'Print everything ok'
+
+git checkout master
+
+git merge even-better-feature 
+
+git status
+
+git add free_memory.py
+git status
+
+git commit
+
+git log --graph --oneline

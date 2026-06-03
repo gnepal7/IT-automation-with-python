@@ -1,11 +1,11 @@
 cd checks/
 git branch
 
-git branch new-feature
+git branch new-feature # creates new branch
 git branch
 
 git checkout new-feature
 
-git checkout -b even-better-feature
+git checkout -b even-better-feature # creates new branch and switches on it.
 
 atom free_memory.py 

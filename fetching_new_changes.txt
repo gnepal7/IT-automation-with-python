@@ -1,0 +1,12 @@
+cd health-checks/
+git remote show origin
+
+git fetch
+
+git log origin/master
+
+git status
+
+git merge origin/master
+
+git log

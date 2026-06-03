@@ -1,0 +1,8 @@
+cd health-checks/
+git remote -v # displays the url of remote server
+
+git remote show origin
+
+git branch -r
+
+

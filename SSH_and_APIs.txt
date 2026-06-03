@@ -1,0 +1,18 @@
+Secure Shell (SSH)
+Transport Layer Security (TLS) 
+
+
+SCP (Secure Copy Protocol) 
+SFTP (Secure File Transfer Protocol)
+
+Application Programming Interface (API)
+
+
+What you can use API keys for
+
+To block anonymous traffic 
+To control the number of calls made to your API 
+To identify usage patterns 
+To filter logs by API key 
+
+
