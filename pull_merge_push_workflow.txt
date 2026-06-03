@@ -6,9 +6,9 @@ git push
 
 git pull
 
-git log --graph --oneline --all
+git log --graph --oneline --all # displays all branches and commit on them.
 
-git log -p origin/master
+git log -p origin/master # three-way-merge
 
 git add all_checks.py 
 git commit
