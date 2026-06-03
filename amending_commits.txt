@@ -1,0 +1,31 @@
+cd scripts/
+touch auto-update.py
+touch gather-information.sh
+ls -l
+
+git add auto-update.py
+git commit -m 'Add two new scripts'
+
+git add gather-information.sh
+git commit --amend #overwrites the previous commit
+
+
+Add two new scripts.
+
+gather-information.sh will collect information in case of errors.
+auto-update.py will run daily to update computers automatically.
+
+# Please enter the commit message for your changes. Line starting
+#with '#' will be ignored, and an empty message aborts the commit.
+#
+#Date: Mon Jan 6 08:28:17 2020 -0800
+#
+# On branch master
+# Changes to be committed:
+#	new file: auto-update.py
+#	new file: gather-information.sh
+#
+# Untracked files:
+#	output.txt
+
+

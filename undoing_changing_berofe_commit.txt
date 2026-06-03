@@ -1,0 +1,35 @@
+cd scripts
+atom all_checks.py
+
+#!/usr/bin/env python3
+  
+import os
+import sys
+
+def main():
+    if check_reboot():
+        print("Pending Reboot.")
+        sys.exit(1)
+
+    print("Everything ok.")
+    sys.exit(0)
+
+main()
+
+
+./all_checks.py 
+git status
+
+git checkout all_checks.py
+git status
+
+./all_checks.py 
+
+./all_checks.py > output.txt
+git add *
+git status
+
+git log -p :- displays history of all changes. We can choose a commit which to apply.
+
+git reset HEAD output.txt
+git status

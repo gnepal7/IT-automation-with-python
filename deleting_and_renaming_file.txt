@@ -1,0 +1,22 @@
+cd checks/
+ls -l
+
+# rm:- removes file
+git rm process.py
+
+git status
+
+git commit -m 'Delete unneeded processes file'
+
+# mv:- renames the file
+git mv disk_usage.py check_free_space.py
+git status
+
+git commit -m 'New name for disk_usage.py'
+
+echo .DS_STORE > gitignore
+ls -la
+
+.gitignore:- ignore on all process to file and folders.
+git add .gitignore 
+git commit -m 'Add a gitignore file, ignoring .DS_STORE files'

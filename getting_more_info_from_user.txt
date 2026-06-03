@@ -1,0 +1,45 @@
+# it is short from of patch, 
+git log -p : shows commit history with full file changes (diff for each commit)
+
+git log
+
+git log --stat : shows commit history with summary of changes (files changed, insertions, deletions)
+
+atom : opens files or project in Atom text editor (GUI editor launch command)
+atom  all_checks.py
+
+
+file in Video:
+#!/usr/bin/env python3
+  
+import os
+import sys
+
+def check_reboot():
+    """Returns True if the computer has a pending reboot."""
+    return os.path.exists("/run/reboot-required")
+
+def main():
+    if check_reboot():
+        print("Pending Reboot.")
+        sys.exit(1)
+
+    print("Everything ok.")
+    sys.exit(0)
+
+main()
+
+git diff
+
+git add -p : interactively stages parts (hunks) of files instead of entire file
+
+git diff
+git diff --staged : shows differences between staged files and the last commit
+
+git commit -m 'Add a message when everything is ok'
+
+
+
+
+
+
