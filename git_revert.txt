@@ -1,0 +1,5 @@
+git checkout : switches to another branch or restores files from a commit
+git commit --amend : modifies the most recent commit
+git reset : moves HEAD and can undo commits or unstage changes
+git revert : creates a new commit that undoes a previous commit
+SHA-1 : unique identifier (hash) for each Git commit
