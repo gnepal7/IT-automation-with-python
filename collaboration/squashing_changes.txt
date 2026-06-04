@@ -1,0 +1,26 @@
+
+Squash = merge several commits into one commit.
+Rebase = rearrange/reapply commits on top of another branch or commit, usually keeping 
+them as separate commits unless you choose to squash during the rebase.
+
+git rebase -i master
+
+pick 736d754 Add a simple README file
+pick 01231b0 Add more information to the README
+(...)
+
+pick 736d754 Add a simple README file
+squash 01231b0 Add more information to the README
+(...)
+
+git show
+
+git status
+
+git log --graph --oneline --all -4
+
+git push
+
+git push -f # force push
+
+git log --graph --oneline --all -4

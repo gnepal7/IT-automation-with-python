@@ -1,0 +1,42 @@
+Git rebase updates your branch by placing your work after 
+the latest changes from another branch.
+
+git checkout master
+
+git pull
+
+git log --graph --oneline --all
+
+git checkout refactor
+
+git rebase master
+
+git log --graph --oneline
+
+git checkout master
+
+git merge refactor
+
+git push --delete origin refactor
+
+git branch -d refactor
+
+git push
+
+
+# next example of rebase
+
+git commit -a -m 'Add a simple network connectivity check'
+
+git fetch
+
+git rebase origin/master
+
+./health_checks.py 
+
+git add health_checks.py 
+git rebase --continue
+
+git log --graph --oneline
+
+git push

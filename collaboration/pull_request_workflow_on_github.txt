@@ -1,0 +1,16 @@
+git clone https://github.com/redquinoa/rearrange.git
+
+cd rearrange
+ls -l
+
+git log
+
+git checkout -b add-readme
+
+git add README.md
+git commit -m 'Add a simple README.md file'
+
+git push -u origin add-readme
+
+#updating on existing pull requests:
+git commit -a -m 'Add more information to the README'

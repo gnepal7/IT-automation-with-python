@@ -1,0 +1,3 @@
+git commit -a --amend # edit the original commit.
+
+git status
