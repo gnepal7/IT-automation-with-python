@@ -1,0 +1,79 @@
+# DevOps
+ -Traditional development used separate dev and ops teams.
+ - Developers wrote code; ops handled deployment and maintenance.
+ - Siloed teams caused poor understanding and communication gaps.
+ - Dev team lacked production knowledge; ops lacked code insight.
+ - DevOps unites development and operations teams.
+ - DevOps promotes collaboration, communication, and automation.
+ - Goal: faster, more reliable software delivery.
+ - Emphasizes automation in coding, testing, deploying, monitoring.
+ - Streaming company example: moved to cloud and microservices.
+ - Adopted independent team releases and CI/CD pipelines.
+
++ DevOps principles
+ . Collaboration
+ . Automation
+ . Continuous improvement
+ . Customer mindset
+ . Create with the end in mindset
+
+# Service-level agreements (SLAs)
+ - Promises in tech are formalized as Service-Level Agreements (SLAs).
+ - SLA is a contract between vendor and clients guaranteeing performance.
+ - SLAs are often legally binding and included in sales contracts.
+ - They define minimum service levels like uptime and responsiveness.
+ - SLAs specify consequences (penalties) for not meeting promises.
+ - SLA outlines specific Service-Level Objectives (SLOs).
+ - Violating SLAs can result in financial penalties or contract cancellation.
+ - Understanding SLAs helps make better reliability investment decisions.
+
+# Service-level Objectives (SLOs)
+ - SLAs define service commitments promised to customers.
+ - SLOs specify measurable performance goals within SLAs.
+ - Common SLO metrics include uptime, response time, and HTTP success codes.
+ - Clear, measurable SLOs prevent confusion and unrealistic expectations.
+ - Example SLA promises 99% successful homepage loading within 10 seconds.
+ - SLOs require homepage loading under 10 seconds 99% of times.
+ - Monitoring tools track real-world performance against defined SLO targets.
+
+# Service-level Indicators (SLIs)
+ - SLIs measure application performance against defined service objectives.
+ - SLIs answer, “How well did the service perform?”
+ - Simple, relevant metrics make SLIs easier to monitor effectively.
+ - SLAs define promises made between companies and customers.
+ - Example SLA guarantees 99% homepage uptime within 10 seconds.
+ - Page load time and HTTP errors are important SLI metrics.
+ - Monitoring tools like Datadog and AppDynamics track SLIs automatically.
+
+# Error budgets
+ - Error budget measures allowable service failure within SLO limits.
+ - Error budget equals total time multiplied by remaining unreliability percentage.
+ - A 99.9% uptime SLO allows 0.1% service downtime.
+ - Monthly 99.9% uptime permits about 43 minutes downtime.
+ - Error budgets guide reliability decisions for DevOps and SRE teams.
+ - Large error budgets allow innovation and releasing new features safely.
+ - Small error budgets require prioritizing stability over experimental changes.
+
+# DevOps review
+ - DevOps combines development and operations in a collaborative approach.
+ - It emphasizes agility, automation, and continuous improvement.
+ - DevOps improves communication and speeds up software delivery.
+ - SLAs are formal agreements defining minimum service performance levels.
+ - SLOs are measurable targets defined within SLAs for reliability goals.
+ - SLIs track real-time system performance against SLOs.
+ - Error budgets represent allowed failure time within SLO limits.
+
+# IT skills in action reading
+Adam’s situation describes a common DevOps/data migration problem and how it can be solved using Python:
+ - His old system (SupportGenius Solutions) was outdated and not scalable.
+ - He chose a modern system (SupportWave Technologies) for better performance.
+ - Data migration was expensive using third-party services.
+ - He used Python and the requests module to extract data via APIs instead.
+ - He manually processed and transferred the data into the new system.
+ - Because the new API had random errors, he used exception handling and retries.
+ - This approach saved money while still achieving a successful migration and scaling support.
+
+
+
+
+

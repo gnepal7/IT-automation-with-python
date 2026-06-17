@@ -1,0 +1,50 @@
+# Puppet nodes
+all these saved in site.pp
+Node : Any system where we run puppet agents.
+FQDN
+node default {
+  class { 'sudo': }
+  class { 'ntp':
+        servers => ['ntp1.example.com', 'ntp2.example.com']
+  }
+}
+
+node webserver.example.com {
+  class { 'sudo': }
+  class { 'ntp':
+        servers => ['ntp1.example.com', 'ntp2.example.com']
+  }
+  class { 'apache': }
+}
+
+# Puppet's Certificate Infrastructure
+PKI : Public Key Infrastructure
+SSL : Secure Socket Layers
+Private Key
+Public Key
+Certificate of authority
+
+# Setting up Puppet clients and servers
+sudo puppet config --section master set autosign true
+
+ssh webserver
+sudo apt install puppet
+sudo puppet config set server ubuntu.example.com
+
+sudo puppet agent -v --test
+
+vim /etc/puppet/code/environments/production/manifests/site.pp
+node webserver {
+  class { 'apache': }
+}
+node default {}
+sudo systemctl enable puppet
+sudo systemctl start puppet
+sudo systemctl status puppet
+
+# More Information about Deploying Puppet to Clients
+http://www.masterzen.fr/2010/11/14/puppet-ssl-explained/
+
+
+
+

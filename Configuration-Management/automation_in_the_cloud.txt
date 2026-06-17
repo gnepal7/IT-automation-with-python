@@ -1,0 +1,36 @@
+# Cloud Computing
+
+# Cloud Service Overview
+SSD
+Virtual drive
+SaaS :- Software as a Service
+PaaS :- Platform as a Service
+IaaS :- Infrastructure as a Service => Amazon, Google Cloud
+
+# Scaling in the Cloud
+- Capacity :- can be used as need
+- Queries per second (QPS)
+- Changing or increasing the capacity is known as Scaling
+- Horizontly :- adding server and sharing load balance
+- Vertically :- making bigger space
+- Automatically :- By software as increasing the load 
+- Manually :- By human
+- Quatos :- 
+
+# Evaluating the Cloud
+SOC 1 
+ISO27001
+MFA :- Multi-factor Authentication
+Encrypted file system
+
+# Migrating to the Cloud
+- IaaS :- List and shift 
+- Lifting 
+- Shifting
+- Managed web application :- Amazon elastic, google, MS app service => PaaS
+- Container
+
++ Public Clouds := 
++ Private Clouds :- 
++ Hybrid Clouds :- Mixed
++ Multi-coluds :- Several venders, same with hybrid

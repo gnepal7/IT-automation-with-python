@@ -1,0 +1,56 @@
+# Deploying Puppet Locally
+1. Packages
+2. Files
+3. Services
+
+# Applying rules locally
+sudo apt install puppet-master
+
+vim tools.pp
+htop
+sudo puppet apply -v tools.pp 
+
+# Managing resource relationships
++ Manifest
++ Resource Relationships
+vim ntp.pp
+
+class ntp {
+  package { 'ntp':
+    ensure => latest,
+  } 
+  file { '/etc/ntp.conf':
+    source => '/home/user/ntp.conf',
+    replace => true,
+    require => Package['ntp'],
+    notify  => Service['ntp'],
+  }
+  service { 'ntp':
+    enable  => true,
+    ensure  => running,
+    require => File['/etc/ntp.conf'],
+  }
+}
+include ntp
+
+sudo puppet apply -v ntp.pp
+
+vim ntp.conf
+
+# Organizing Puppet modules
+Modules are collections of manifests
+init.pp
+tree modules/
+sudo apt install puppet-module-puppetlabs-apache
+cd /usr/share/puppet/modules.available/puppetlabs-apache
+ls -l
+ls -l manifests/
+vim webserver.pp
+include ::apache
+sudo puppet apply -v webserver.pp
+
+More Information About Deploying Puppet Locally
+https://puppet.com/docs/puppet/latest/style_guide.html
+https://puppet.com/docs/puppetserver/latest/install_from_packages.html
+
+

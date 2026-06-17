@@ -1,0 +1,130 @@
+#=> Application Programming Interfaces (APIs)
+
+# Distributed systems
+. A  common example of a distributed system would be a website that contains:
+ - Presentation logic
+ - Business logic
+ - Database Engine
+ - Web Server
+
++ Key characteristics of a distributed system
+ - Resourse sharing
+ - Error detection
+ - Transparancy
+ - Simultaneouw processing
+ - Scalability
+ - Hetrogeneity
+
++ Advantages of a distributed system
+ - Flexibility
+ - Large volume
+ - Redundancy of nodes
+ - Fault tolerance
+
++ Disadvantages of a distributed system
+ - Increased complexity
+ - Extra work
+ - Potential introduction of new problems
+ - Potential introduction of delays
+ - Increased costs
+
+# NALSD :- non-abstract large system design
+- by Google, SREs (site reliability engineers)
+
++ Key characteristics of NALSD
+ - Technical Design => iterative process, involves multiple rounds of design and refinement
+ - Scaling up
+   . Is it feasible?
+   . Is it resilient?
+   . Can we do better?
+
++ Three key goals of NALSD
+ - Capacity planning: Estimate and monitor resources to ensure systems handle 
+   current and future demand without under- or over-provisioning.
+ - Component isolation: Design modular, independent components with single 
+   responsibilities to improve simplicity, maintainability, and reliability.
+ - Graceful degradation: Ensure system continues partial functionality during failures 
+   instead of complete outage, limiting impact on users.
+
+# Built-In Libraries vs. External Libraries
+ - PyPI :- Python Package Index (https://pypi.org)
+ - Python Imaging Library (PIL) 
+  . pillow :- https://pypi.org/project/Pillow/
+  . import PIL
+
+# What is an API?
+ - Application Programming Interfaces(APIs) enable software interaction using 
+   reusable functions, including cross-language communication via web services.
+ - APIs expose public interfaces while hiding internal code, providing 
+   stable, consistent functionality.
+ - APIs must remain consistent despite internal changes; breaking changes 
+   require versioning and communication.
+ - Developers learn APIs by studying function calls, inputs, and outputs of a library.
+
+# How to Make Sense of an API?
+ - Learning a new API requires understanding structure, inputs, outputs, and 
+   behavior through exploration and practice.
+ - Good APIs are descriptive, follow naming conventions, and provide 
+   documentation for clarity.
+ - Documentation and source code help verify function behavior, 
+   especially in open-source or web APIs.
+ - Python uses docstrings to document APIs, accessible via help() and IDE tooltips.
+ . Pillow's full documentation is in https://pillow.readthedocs.io/
+
+# Generate and manage containers
+ - Generating image containers
+  . To build a container image https://docs.docker.com/get-started/02_our_app/.
+    We can create a Dockerfile, which contains step-by-step inctructions
+ - Choose a base image
+  . One important step is deciding which base image to use:
+    https://pythonspeed.com/articles/base-image-python-docker-images/
+ - Create a Dockerfile :- here's a sample Dockerfile
+  FROM python:3.9
+  WORKDIR /app
+  COPY requirements.txt ./
+  RUN pip install -r requirements.txt
+  COPY . .
+  EXPOSE 4000
+  CMD [ "flask", "run", "--host=0.0.0.0", "--port=4000"]
+ - Here's a minimal one among of the requirements.txt file:
+  flask
+  pymysql
+  Flask-SQLAlchemy 
+ - Build a Docker image
+  . We can build a Docker image:
+    https://linuxize.com/post/how-to-build-docker-images-with-dockerfile/
+  . Choose the best Docker image:
+    https://www.techtarget.com/searchitoperations/tip/Choose-the-best-Docker-image-for-the-job-at-hand
+ - Manage images
+   docker run -p 4000:4000 myname/myapp:1.0
+   docker image ls -a
+   docker image prune
+  
+# Generate and manage containers: VS Studio & Docker
+ - Build a container using VS Code and Docker
+  . In the VS Code menu, select View > Extensions.
+  . Search for “docker.”
+  . Install the verified Docker extension from Microsoft.
+  . Full guidence on : https://learn.microsoft.com/en-us/visualstudio/docker/tutorials/docker-tutorial
+  . Read more about : https://code.visualstudio.com/docs/devcontainers/containers
+
+# How to Use PIL for Working With Images
+from PIL import Image
+im = Image.open("example.jpg")
+new_im = im.resize((640,480))
+new_im.save("example_resized.jpg")
+
+from PIL import Image
+im = Image.open("example.jpg")
+new_im = im.rotate(90)
+new_im.save("example_rotated.jpg")
+
+from PIL import Image
+im = Image.open("example.jpg")
+im.rotate(180).resize((640,480)).save("flipped_and_resized.jpg")
+
+
+
+
+
+

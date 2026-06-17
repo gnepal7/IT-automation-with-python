@@ -1,0 +1,16 @@
+# Modifying and testing manifests
+Puppet parser validate 
+rspec test
+describe 'gksu', :type => :class do
+  let (:facts) { { 'is_virtual' => 'false' } }
+  it { should contain_package('gksu').with_ensure('latest') }
+end
+
+# Safely Rolling out Changes and Validating them
++ Test Environnment
++ Development 
++ Canaries
+
+# More Information About Updating Deployments
+https://rspec-puppet.com/tutorial/
+http://puppet-lint.com/

@@ -1,0 +1,199 @@
+# Logging
+ - print() for simple console debugging and quick output.
+ - Logging offers advanced control for production apps.
+ - print() adds overhead unsuitable for production use.
+ - Logging tracks behavior and analyzes issues effectively.
+ - External API failures often hidden by print() statements.
+ - Severe problems need immediate alerts via logging.
+ - Filter logs by severity to reduce noise.
+ - Logging levels: DEBUG, INFO, WARNING, ERROR, CRITICAL.
+ - Helps trace problems without massive log clutter.
+
++ Printing
+ - print() can send output not only to the console but also directly to a file using the file parameter.
+ - When using print(), arguments like sep, end, file, and flush are keyword-based controls for formatting and output destination.
+ - In cloud or non-console environments, printed output is usually captured in logs instead of a terminal.
+
++ Logging
+ - Logging provides object-oriented alternative to print statements
+ - Supports severity levels for better message categorization
+ - Includes debug, info, warning, error, critical levels
+ - Enables filtering and routing to multiple output destinations
+
++ Different types of logging handlers
+ - FileHandler
+ - NullHandler
+ - WatchedFileHandler
+ - BaseRotatingHandler
+ - RotatingFileHandler
+ - TimedRotatingFileHandler
+ - SocketHandler
+ - DatagramHandler
+ - SysLogHandler
+ - NTEventLogHandler
+ - SMTPHandler
+ - MemoryHandler
+ - HTTPHandler
+ - QueueHandler
+ - QueueListener
+
+# The logging module
+ + Five levels of the logging module
+  - DEBUG: Detailed troubleshooting info like variable values
+  - INFO: General program activity tracking messages
+  - WARNING: Non-fatal issues needing attention or fallback
+  - ERROR: Serious recoverable problems like failures or missing files
+  - CRITICAL: Fatal errors causing application termination
+
+ . A simple way to initialize the logger is the following:
+# Set the minimum logging level to INFO,
+logging.basicConfig(level=logging.INFO)
+# Get a logger object
+log = logging.getLogger(__name__)
+# Start the log file
+log.info("Hello world")
+
++ Alternatives to the logging module 
+ - Structlog: Produces structured JSON logs for easy parsing
+ - Enables better search, filtering, and log analysis
+ - Colorlog: Adds color-coded log levels in console output
+ - Alternatives are drop-in replacements with minimal code changes
+
+# Exception handling
+ - Exception handling manages runtime errors in Python programs
+ - Exceptions disrupt normal program execution flow
+ - They are errors that cannot be automatically recovered from
+ - Handling them helps control and prevent program crashes
+
++ Some examples of exceptions are the following
+ - Attempting to divide by zero
+ - Referencing a variable that doesn’t exist
+ - Attempting to open a file that doesn’t exist
+ - Connecting fails to a remote server
+
++ The most common types of exceptions
+ - NameError
+ - AttributeError
+ - TypeError
+ - ImportError
+ - FileNotFoundError
+
+. An example of an except statement is:
+try:
+  # Try to append to a file that is normally not writable
+  # for anyone other than root 
+  f = open("/etc/hosts", "w+")
+except IOError as ex:
+  # The variable "ex" will hold details about the error
+  # that occurred
+  print("Error appending to file: " + str(ex))
+else:
+  # If there was no exception, close the file.
+  f.close()
+
+try:
+  first_name = user["first_name"]
+except KeyError:
+  print("User does not have a first_name field")
+
+# Exception handling examples
+try:
+  print(x)
+except NameError:
+  print("Variable x is not defined")
+
+try:
+  f = open("/etc/hosts", "w+")
+  f.write("Success!")
+except FileNotFoundError:
+  print("Data file not found")
+except Exception as ex:
+  print("Error appending to file: " + str(ex))
+else:
+  f.close()
+
++ Using raise
+def start_server(port):
+  if not isinstance(port, int):
+    raise TypeError("Port number must be an integer")
+  elif port < 1024 or port > 65535:
+    raise ValueError("Port number is invalid")
+
++ Using finally
+f = None
+try:
+    f = open("/etc/hosts", "w+")
+except Exception as ex:
+    print("Error appending to file: " + str(ex))
+finally:
+    if f is not None:
+        f.close()
+
+# Introduction to Python Email Library
+ - Simple Mail Transfer Protocol (SMTP) and Multipurpose Internet Mail Extensions(MIME) 
+ - Manual email construction requires reading complex protocol documentation
+ - Python email module simplifies creating email messages
+
+An example code for sending email script:
+from email.message import EmailMessage
+message = EmailMessage()
+print(message)
+
+sender = "me@example.com"
+recipient = "you@example.com"
+
+message['From'] = sender
+message['To'] = recipient
+print(message)
+From: me@example.com
+To: you@example.com
+
+message['Subject'] = 'Greetings from {} to {}!'.format(sender, recipient)
+print(message)
+From: me@example.com
+To: you@example.com
+Subject: Greetings from me@example.com to you@example.com!
+
+body = """Hey there!
+I'm learning to send emails using Python!"""
+message.set_content(body)
+
+print(message)
+
+From: me@example.com
+To: you@example.com
+Subject: Greetings from me@example.com to you@example.com!
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Hey there!
+I'm learning to send email using Python! 
+
+# Adding Attachments
+ + Using mimetype module
+  import os.path
+  attachment_path = "/tmp/example.png"
+  attachment_filename = os.path.basename(attachment_path)
+  import mimetypes
+  mime_type, _ = mimetypes.guess_type(attachment_path)
+  print(mime_type)
+  image/png
+
+mime_type, mime_subtype = mime_type.split('/', 1)
+print(mime_type)
+image
+print(mime_subtype)
+png
+
+
+# Sending the Email Through an SMTP Server
+import smtplib
+mail_server = smtplib.SMTP_SSL('smtp.example.com')
+mail_server.set_debuglevel(1)
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+# Prompt should be in: 
+T = Task :- Persona => request AI to act as a person with expertise
+         :- Format => Short sentences, bullet or list
+C = Context :- Providing the scenario of using AI
+R = References :- Connect with previous similar scenario
+E = Evalute :- Compara between result and aspectation
+I = Iterate :- Needs reperation, refining and improving prompt 
+
+for rembering:
+Touhghtfully create really excellent inputs :- TCREI
+
+# Leverage AI for faster troubleshooting
+
+# Leverage AI for faster troubleshooting
+
+# Automate routine IT tasks with AI
+
+# Simplify IT documentation using AI
+
+# Use AI to identify IT security risks
+
+
+
+
+
+
+
+

@@ -1,0 +1,108 @@
+# Managing Cloud Instances at Scale
+
+# Storing Data in the Cloud
+1. Block Storage :- like a hard drive
+2. Object/Blob Storage :- lets you place and retrieve objects in a storage buckets.
+Blob => Binary large objects
++ Presistent storage :- that are long lived and need to keep data across reboots and upgrades.
++ Ephemeral storage :- only temporary and only need to keep local data while they are running.
+
+- Container
+- Shared file-solution system :- NFS, CFS file system
+- Databases :- SQL, NOSQL
+- Storage class :- based on prices
+
+Throughput => The amount of data that you can read and write in a given amount of time.
+IOPS :- Input/Output Operations Per Secone
+     => Measures how many reads or writes you can do in one second, no matter how much you're accessing.
+Latancy 
+
++ Time to first byte
++ Hot data :- accessed frequently and stored in hot storage, can be stored on SSD, newer for 1 year.
++ Cold data :- accessed infrequently and stored in cold storage, older than 1 year.
+
+# Load Balancing
++ Round Robin DNS
++ DNS :- Domain name system
++ Dedicated Load Balencer
+
+- Sticky seccions => All requests from the same client always go to the same backed server
+- GEO DNS, GEOIP
+- CDNs => Content delivery networks
+
+# Change Management
+- Unit test
+- Intigretion test
+- Continuous Integration
+- Continuous Deployent
++ jenkins
++ Travis CI
+
+:- Test Environment
+:- Production Environment
+:- Prod (like a master branch on GIT)
+A/B Testing :- Some request are served using one set of code and configuration (A) and other requests are served using a different set of code and configuration (B)
+
+# Understanding Limitations
+- Quotas
+- Limits
+- Limititation on blocks
+- Rate Limits :- 
+- Utilization Limit :- 
++ Quota Increase
+
+. Dependencies
+. Beta and pre-release version
+
+# More About Cloud Providers
+https://cloud.google.com/compute/quotas#understanding_vm_cpu_and_ip_address_quotas
+https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html
+https://docs.microsoft.com/en-us/azure/azure-subscription-service-limits#service-specific-limits
+
+# Getting Started with Monitoring
++ Monitoring system := AWS, Google, datadog, 
+ - Whitebos monitoring
+ - Blackbox monitoring
++ Alerting :- 
++ Metrics
+
+:- Response code
+
+# Getting Alerts When Things Go Wrong
+ - cron for linux
+ + Actionable
+
+# Service-Level Objectives
+ SLO :-
+ - Measeruable => 99.9% avalibility
+ SLA :- Service Leve Agreement => between provider and client
+ Error Budgets :- can be service down 43 min/month
+ 
+# Basic Monitoring in GCP
+- Stackdriver on Google Cloud Platform
+
+# More Information on Monitoring and Alerting
+https://www.datadoghq.com/blog/monitoring-101-collecting-data/
+https://www.digitalocean.com/community/tutorials/an-introduction-to-metrics-monitoring-and-alerting
+https://landing.google.com/sre/books/
+
+#=> Troubleshooting and Debugging
+# What to Do When You Can't Be Physically There
+ - Create disk image and keep on helping area
+ - Understanding logs 
+
+# Identifying Where the Failure Is Coming From
+ - Switch the service to another server
+ - Rollbacks to previous version
+ - Containerization application
+ 
+# Recovering from Failure
+ - Good backup
+ - Good recovery plan
+ - Secondary instances of running assets
+ -= Redundency
+
+# Debugging Problems on the Cloud
+https://cloud.google.com/compute/docs/troubleshooting/troubleshooting-instances
+https://docs.microsoft.com/en-us/azure/virtual-machines/troubleshooting/
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-troubleshoot.html

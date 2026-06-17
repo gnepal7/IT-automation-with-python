@@ -1,0 +1,225 @@
+# Web Applications and Services
+ - Browser sends HTTP request; server forwards it to web application.
+ - Web app generates HTML content and serves images and data.
+ - Web services expose APIs, allowing programs to interact via API calls.
+ - API endpoints listen for requests using a defined communication protocol.
+ - Protocol-based interaction allows language-independent communication between systems.
+
+# RESTful APIs
+ - RESTful APIs were defined by Roy Fielding in his 2000 PhD thesis.
+ - They use HTTP instead of direct internet port exposure for communication.
+ - HTTPS and authentication methods secure RESTful API endpoints.
+ - RESTful APIs use HTTP methods to perform CRUD operations on resources.
+
++ RESTful methods
+ - GET requests data from a resource without changing it.
+ - HEAD is like GET but returns only headers, no body.
+ - POST sends data to a resource, often causing changes on the server.
+ - PUT replaces the entire target resource with the provided data.
+
++ JSON
+ - JSON is a data-interchange format used in RESTful APIs for communication.
+ - Servers often send responses in JSON format after processing client requests.
+ - JSON ensures consistent and easy parsing between client and server.
+ - It uses key-value pairs, making it human-readable and machine-friendly.
+ - JSON is widely used in web APIs due to its simplicity and structure.
+
+# What is REST architecture?
+ - REST stands for Representational State Transfer and is a web architecture style.
+ - It defines a standard way for clients and servers to communicate over the internet.
+ - REST is stateless, meaning the server does not store client session data.
+ - Each request contains all necessary information for the server to process it
+
++ Constraints with the REST architecture
+ - Uniform interface
+ - Stateless
+ - Cacheable
+ - Client-server
+ - Layered system
+ - Code on demand (optional)
+
++ HTTP protocol with REST
+ - REST runs on top of HTTP, enabling standard internet communication.
+ - REST APIs are publicly available for developers to use with any language.
+ - Communication uses HTTP verbs, headers, and data payloads.
+ - URLs often contain most information needed for server processing.
+ - HTTP methods like GET, PUT, DELETE, POST, and PATCH manage resources.
+ - Headers control authentication, features, and response formats like JSON or XML.
+
+# Using REST APIs to access web data
+ - REST APIs let clients send requests and receive responses, like a waiter.
+ - Clients request data from servers, which respond with the needed information.
+Here are the key steps to access web data using RESTful APIs:
+ . Identify the API endpoint
+ . Select the appropriate HTTP method
+   - GET: Retrieve data from the resource.
+   - POST: Create a new resource.
+   - PUT: Update an existing resource or create it if it doesn't exist (replace the entire resource).  
+   - PATCH: Partially update an existing resource.
+   - DELETE: Remove a resource.
+ . Set up request headers
+ . Prepare the request body
+ . Send the HTTP request
+ . Receive the HTTP response
+  - Status code: Indicates the outcome of the request (e.g., 200 for success, 404 for not found, 500 for server error)
+  - Response headers: Contain metadata about the response
+  - Response body: Contains the requested data, often in a structured format like JSON or XML
+ . Handle the response
+ . Implement pagination and filtering
+ . Authentication and authorization
+ . Error handeling
+ . Rate limiting (if applicable)
+ . Repeat as needed
+
+# Python tools for REST APIs
+ . Client-side
+  - Requests
+  - PycURL
+ . Server-side
+  - Flask :- Uber, Pinterest, and Twilio
+  - Django :- YouTube, Instagram, Spotify, and DropBox
+  - FastAPI :- Netflix
+
+# What is Flask?
+ - Python library with REST web services.
+ - Microframework, does not use an Object relational manager (ORM)
+ - WSGI (Web Server Gateway Interface) enable scalability and flexibility.
+
++ Popular Flask plugins 
+ - Flask WTF
+ - Flask RESTful
+ - Flask login
+ - Flask debug toolbar
+
+ . Flexibility and freedom
+ . Rapid development and scalability
+ . Trust of large corporations
+
+# How to use Flask ?
+ # This is not an excutable code block
+from flask import Flask
+app = Flask("myapp")
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
+from flask import Flask
+app = Flask("hello")
+@app.route('/hello/<name>')
+def hello_world(name):
+    return f'Hello, {name}!'
+
+# Data Serialization
+- Serialization converts in-memory data into a storable or transmittable format.
+- Deserialization converts serialized data back into usable in-memory objects.
+- It is widely used for communicating with web services and APIs.
+- APIs require data in specific formats for proper message exchange.
+- An examples of dictionaries:
+people = [
+    {
+        "name": "Sabrina Green",
+        "username": "sgreen",
+        "phone": {
+            "office": "802-867-5309",
+            "cell": "802-867-5310"
+        },
+        "department": "IT Infrastructure",
+        "role": "Systems Administrator"
+    },
+    {
+        "name": "Eli Jones",
+        "username": "ejones",
+        "phone": {
+            "office": "684-348-1127"
+        },
+        "department": "IT Infrastructure",
+        "role": "IT Specialist"
+    },
+]
+
+# Data Serialization Formats
+ - JSON :- JavaScript Object Notation
+
+import json
+with open('people.json', 'w') as people_json:
+    json.dump(people, people_json, indent=2)
+
+[
+  {
+    "name": "Sabrina Green",
+    "username": "sgreen",
+    "phone": {
+      "office": "802-867-5309",
+      "cell": "802-867-5310"
+    },
+    "department": "IT Infrastructure",
+    "role": "Systems Administrator"
+  },
+  {
+    "name": "Eli Jones",
+    "username": "ejones",
+    "phone": {
+      "office": "684-348-1127"
+    },
+    "department": "IT Infrastructure",
+    "role": "IT Specialist"
+  },
+]
+
+- YAML :- Yet Another Markup Language
+import yaml
+with open('people.yaml', 'w') as people_yaml:
+    yaml.safe_dump(people, people_yaml)
+
+- department: IT Infrastructure
+  name: Sabrina Green
+  phone:
+    cell: 802-867-5310
+    office: 802-867-5309
+  role: Systems Administrator
+  username: sgreen
+- department: IT Infrastructure
+  name: Eli Jones
+  phone:
+    office: 684-348-1127
+  role: IT Specialist
+  username: ejones
+
+# The Python Requests Library
+import requests
+response = requests.get('https://www.google.com')
+
+response.request.headers['Accept-Encoding']
+'gzip, deflate'
+
+response.headers['Content-Encoding']
+'gzip'
+
+# Useful Operations for Python Requests
+response.ok
+True
+
+response.status_code
+200
+
+response = requests.get(url)
+if not response.ok:
+    raise Exception("GET failed with status code {}".format(response.status_code))
+
+response = requests.get(url)
+response.raise_for_status()
+
+# HTTP GET and POST Methods
+ - HTTP supports methods like GET, POST, PUT, and DELETE.
+ - GET requests retrieve resources from a server using a URL.
+ - Most web browsing consists of sending GET requests for content.
+ - GET requests can also include parameters in the URL.
+
+# What is Django?
+ . Full Stack web framework.
+ - Django is a Python web framework that simplifies building full-stack web applications.
+ - It separates application logic, data storage, and web server handling for modular design.
+ - It routes URLs to views using a URL resolver to generate dynamic responses.
+ - Django uses an ORM to interact easily with databases through Python objects.
+ - It supports JSON-based POST endpoints for adding and managing data like customer reviews.
+ - Other web frameworks include Flask, Bottle, CherryPy, and CubicWeb.

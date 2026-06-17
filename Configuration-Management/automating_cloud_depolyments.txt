@@ -1,0 +1,27 @@
+# Cloud Scale Deployments
+- Load balancer
+- Round robin :- each node one request
+- Autoscaling
+- PaaS model 
+- Entry point of a site
+- Varnish, Ngix, Cloudflare
+Memcached
+
+# What is orchestration?
+- Automation
+- The automated configuration and coordination of complex IT syetems and services
+- Includes a lots of automated tasks together
+- Hybrid cloud setup
+
+# Cloud Infrastructure as Code
+- Cloudformation :- Amazon
+- Colud Deployment Manager :- Google
+- Azure Resource manager :- Miscrosoft
++ Teraform :- DSL => rules to define service
+
+# More About Cloud & GCP
+https://cloud.google.com/community/tutorials/getting-started-on-gcp-with-terraform
+https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-unmanaged-instances
+https://cloud.google.com/load-balancing/docs/https/
+https://geekflare.com/gcp-load-balancer/
+
