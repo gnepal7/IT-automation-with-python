@@ -1,0 +1,66 @@
+# Dealing with Hard Problems
+1. Develop code in small, degistable chunk
+2. Keep your goal and focus
+3. Keep learning
+
+# Proactive Practices
+1. Deploy software in phases and scenaries
+2. Debug logging
+3. Centralize log collections
+4. Tieketing system
+5. Playbooks - Google
+
+# Planning Future Resource Usage
+1. Network Attached Storage :- NAS
+2. Migrage the system to the cloud
+
+# Change management in virtualized environments
+When working with virtual machines in cloud environments, 
+you have two primary options for change management:
+1. Using the disk snapshot feature to roll a VM back to a previous state.
+2. Maintaining previous VM images and using them for rollback.
+
+Implementing change management in Google Cloud Platform (GCP)
+
+# Containerized Applications: Docker
+https://www.docker.com/resources/what-container/
+https://www.datadoghq.com/knowledge-center/containerized-applications/
+https://docker-curriculum.com/
+https://www.docker.com/101-tutorial/
+
+-> You should  use Docker when:
+-The application you want to run has already been packaged as containers, or
+-You are developing a complex application across multiple teams, such as a microservice-based app, or
+-You're running an application at internet scale across hundreds or thousands of servers.
+
+->You may not want to use Docker when:
+-You’re planning to use Kubernetes, which now prefers new container engines like containerd, or
+-You are running a huge, monolithic legacy application written in something like Java.
+
+# Preventing Future Problems
+1. Monitoring
+2. CPU, Disk, Memory, Network assecories
+
+# More about preventing future breakage
+1. Problem domains
+2. Failure domains
+3. Programming problem solving
+4. Effective troubleshooting
+
+# Terms and definitions from Course 4, Module 4
+1. Bandwidth
+2. Centralized logs collection
+3. Decorator
+4. Exhausted
+5. Garbage collector
+6. Latency
+7. Memory profiler
+8. Reproduction containers
+9. Swap 
+10. Technical debt
+11. Traffic shaping
+
+
+
+
+
